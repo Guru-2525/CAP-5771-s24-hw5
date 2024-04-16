@@ -18,7 +18,7 @@ def question1():
 
     # type: float
     # Calculate the probability.
-    answers['(c)'] = 0.0080
+    answers['(c)'] = 0.008
     return answers
 
 
@@ -41,24 +41,25 @@ def question2():
     # type: bool
     answers['(b) A'] = True
 
-    # type: bool
+    # type: False
     answers['(b) B'] = False
 
     # type: bool
     answers['(b) C'] = True
 
     # type: bool
-    answers['(b) D'] = False
-
+    answers['(b) D'] =  False
     # type: eval_float
     # The formulas should only use the variable 'p'. The formulas should be
     # a valid Python expression. Use the functions in the math module as
     # required.
-    answers['(c) Weight update'] = '0.5 * math.log((1 - p) / p)'
+    
+
+    answers['(c) Weight update'] = "0.5 * math.log((1 - 0.3) / 0.3)"
 
     # type: float
     # the answer should be correct to 3 significant digits
-    answers['(d) Weight influence'] = 1.528
+    answers['(d) Weight influence'] = 1.5275
     return answers
 
 
@@ -67,10 +68,10 @@ def question3():
     answers = {}
 
     # type: string
-    answers['Agree?'] = 'no'
+    answers['Agree?'] = "No"
 
     # type: explain_string
-    answers['Explain'] = "Of course! Alan's approach of using a coin flip to predict stock market movements is not an effective use of ensemble methods. Ensemble methods combine predictions from different classifiers trained on data, while a coin flip does not involve any training or learning. Therefore, Alan's strategy is flawed and unlikely to provide useful predictions for the stock market."
+    answers['Explain'] = "ensemble methods allows multiple methods to improve the performance but each method need to be trained on relevant data(past) but here alna using random selection which doent supports that"
     return answers
 
 
@@ -95,19 +96,19 @@ def question5():
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(a)'] = 'iii'
+    answers['(a)'] = "iii"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(b)'] = 'i'
+    answers['(b)'] = "i"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(c)'] = 'ii'
+    answers['(c)'] = "ii"
 
     # type: string
     # choices: ['i', 'ii', 'iii', 'iv']
-    answers['(d)'] = 'iv'
+    answers['(d)'] = "iv"
     return answers
 
 
@@ -119,7 +120,7 @@ def question6():
     answers['(a) C1-TPR'] = "p"
 
     # type: eval_float
-    answers['(a) C2-TPR'] = "2*p"
+    answers['(a) C2-TPR'] =  "2*p"
 
     # type: eval_float
     answers['(a) C1-FPR'] = "p"
@@ -130,17 +131,18 @@ def question6():
     # type: string
     # Hint: The random guess line in an ROC curve corresponds to TPR=FPR.
     # choices: ['yes', 'no']
-    answers['(b) C2 better classifier than C1?'] = "no"
+    answers['(b) C2 better classifier than C1?'] = "yes"
 
     # type: explain_string
-    answers['(b) C2 better classifier than C1? Explain'] = "Both classifiers operate similarly to random guessing when the true positive rate (TPR) equals the false positive rate (FPR). Boosting the likelihood of predicting the positive class doesn't improve the effectiveness of C2, as it raises both TPR and FPR equally, resulting in performance comparable to random chance."
+    answers['(b) C2 better classifier than C1? Explain'] = "Both classifiers perform as random guessing where TPR is equal to FPR. Increasing the probability of predicting the + class does not make C2 better, as it increases both TPR and FPR equally, maintaining performance equivalent to random chance."
 
     # type: string
     # choices: ['TPR/FPR', 'precision/recall']
-    answers['(c) Which metric?'] = "TPR/FPR"
+    answers['(c) Which metric?'] = "precision/recall"
 
     # type: explain_string
-    answers['(c) explain'] = "TPR and FPR evaluate the positive predictions and their overall influence on performance across both classes. Given that C1 and C2 share identical TPR and FPR values, they exhibit equivalent performance relative to the random guess baseline on an ROC curve. Precision and recall, which disregard true negatives, provide less informative insights when assessing classifiers that produce random predictions for imbalanced classes."
+    answers['(c) explain'] = "precision and recall take into account both the positive predictions and their impact on the overall performance in the context of both classes. Since C1 and C2 have equal TPR and FPR, they perform the same according to the random guess baseline in an ROC curve. Precision and recall do not consider true negatives and are thus less informative for comparing classifiers that output random predictions on imbalanced classes."
+
     return answers
 
 
@@ -153,21 +155,23 @@ def question7():
     answers['(i) Best classifier?'] = "C2"
 
     # type: explain_string
-    answers['(i) Best classifier, explain'] = "C2 emerges as the superior classifier due to its significantly elevated recall/TPR and F1-measure compared to C1. This suggests that C2 accurately detects a greater number of positive instances while achieving a more favorable balance between precision and recall."
+    answers['(i) Best classifier, explain'] = "C2 has a significantly higher TPR (50%) compared to C1 (10%), which means it is better at identifying positive cases. Both have the same precision, but C2 is more effective overall."
+
 
     # type: string
     # choices: ['TPR-FPR', 'precision-recall-F1-Measure']
     answers['(ii) appropriate metric pair'] = "precision-recall-F1-Measure"
 
     # type: explain_string
-    answers['(ii) appropriate metric pair, explain'] = "Precision, recall, and F1-measure serve as suitable metrics as they offer a comprehensive assessment of a classifier's performance, particularly crucial in scenarios with imbalanced datasets where positive instances are significantly less common than negatives."
+    answers['(ii) appropriate metric pair, explain'] = "The precision, recall, and F1-measure give a more complete picture of a classifier’s performance, especially in the context of imbalanced datasets. These metrics consider both the ability to identify positive cases correctly and the avoidance of misclassifying negative cases as positive."
+
 
     # type: string
     # choices: ['C1', 'C2', 'C3']
-    answers['(iii) preferred classifier?'] = "C3"
+    answers['(iii) preferred classifier?'] = "C3" 
 
     # type: explain_string
-    answers['(iii) best classifier, explain'] = "C2 is favored due to its ability to strike a balance between precision and recall, evident from its highest F1-measure among the classifiers. Although C3 exhibits the highest precision, it does so at the cost of recall, rendering it less preferable for situations where capturing all positive instances is crucial."
+    answers['(iii) best classifier, explain'] = "C3 achieves the best balance between precision and recall, indicated by the highest F1-measure (50%) among the classifiers. It suggests that C2 is more reliable for correctly identifying positive cases while maintaining a reasonable level of precision."
     return answers
 
 
@@ -176,23 +180,23 @@ def question8():
     answers = {}
 
     # type: eval_float
-    answers['(a) precision for C0'] = '(p*100)/(p*1000)'
+    answers['(a) precision for C0'] = '0.1'
 
     # type: eval_float
-    answers['(a) recall for C0'] = 'P'#0.5
+    answers['(a) recall for C0'] = 'P'
 
     # type: eval_float
-    answers['(b) F-measure of C0'] =  '(0.2 * P) / (0.1 + P)'#0.16666
+    answers['(b) F-measure of C0'] = '(0.2 * p) / (0.1 + p)'
 
     # type: string
     # choices: ['yes', 'no', 'unknown']
-    answers['C1 better than random?'] = 'no'
+    answers['C1 better than random?'] = 'no' 
 
     # type: float
     # What is the range of p for which C1 is better than random?  What is
     # "?" in the expression "p > ?"
 
-    answers['p-range'] = 0.3#0.3
+    answers['p-range'] = 0.3
     return answers
 
 
@@ -203,22 +207,22 @@ def question9():
     # type: dict[string,float]
     # keys: ['recall', 'precision', 'F-measure', 'accuracy']
     answers['(i) metrics'] =  {
-        'recall': 0.533,
-        'precision': 0.6154,
-        'F-measure': 0.5689,
-        'accuracy': 0.8800
-    }
+    'recall': 0.5333,
+    'precision': 0.6154,
+    'F-measure': 0.5689,
+    'accuracy': 0.8800
+}
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
-    answers['(i) best metric?'] = 'F-measure'
+    answers['(i) best metric?'] = 'F-measure' #precision
 
     # type: string
     # choices: ['recall', 'precision', 'F-measure', 'accuracy']
-    answers['(i) worst metric?'] = 'Accuracy'
+    answers['(i) worst metric?'] = 'accuracy' #accuracy
 
     # type: explain_string
-    answers['(ii) Explain your choices of best and worst metrics'] = "The optimal metric in this scenario is the F-measure, as it offers an equilibrium between precision and recall, which holds particular importance in contexts characterized by imbalanced classes, like weather prediction where one outcome might prevail. Conversely, accuracy proves to be the least suitable metric since it can be inflated by a multitude of true negatives, which doesn't necessarily reflect effective predictive capabilities for the minority class."
+    answers['(ii) Explain your choices of best and worst metrics'] = 'Accuracy is the best indicator since it accounts for all correct predictions (both true positives and true negatives) over the total number of samples. Precision is the worst in this context because it does not take into account the correct predictions of the majority class, which can be misleading for imbalanced datasets.'
     return answers
 
 
@@ -236,13 +240,13 @@ def question10():
 
     # type: string
     # choices: ['F1', 'TPR/FPR']
-    answers['(c) Which evaluation measure to use between the two tests?'] = "F1"
+    answers['(c) Which evaluation measure to use between the two tests?'] = "TPR/FPR"
 
     # type: explain_string
-    answers['(c) Which evaluation measure? Explain'] = "The selection of the F1-Score is motivated by its ability to offer a more equitable assessment of a test's precision, amalgamating both precision and recall. This makes it particularly apt for assessing clinical tests, where the implications of false positives and false negatives are substantial."
+    answers['(c) Which evaluation measure? Explain'] = 'The F1 score is preferred in medical testing scenarios because it provides a balance between precision and recall, which is critical in ensuring that cases are correctly identified while minimizing false negatives, which could be life-threatening in the case of cancer detection.'
 
     # type: explain_string
-    answers['(d) Example scenario where you would reverse choise in (c)'] = "In situations where prioritizing the identification of true cases is paramount, such as in early screening for a highly hazardous disease, metrics like TPR (True Positive Rate) and FPR (False Positive Rate) could be favored over the F1-Score. This preference is due to their emphasis on the ratio of true positives to false positives, placing greater importance on sensitivity rather than precision."
+    answers['(d) Example scenario where you would reverse choise in (c)'] = 'In a scenario where the cost of false positives is very high, such as when follow-up procedures are invasive, expensive, or carry significant risks, the TPR/FPR ratio might be preferred to minimize the risk of false alarms while maintaining an acceptable detection rate of true positives.'
     return answers
 #-----------------------------------------------------------
 if __name__ == '__main__':
