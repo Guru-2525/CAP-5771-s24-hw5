@@ -70,7 +70,7 @@ def question3():
     answers['Agree?'] = 'no'
 
     # type: explain_string
-    answers['Explain'] = 'Alans approach of predicting stock market movements by flipping a coin and using the majority outcome is not an effective application of ensemble methods. Ensemble methods involve combining predictions from multiple independent classifiers trained on data, whereas a coin flip does not involve any training or learning process. Therefore, Alans approach is fundamentally flawed and is unlikely to provide meaningful predictions for the stock market.'
+    answers['Explain'] = "Of course! Alan's approach of using a coin flip to predict stock market movements is not an effective use of ensemble methods. Ensemble methods combine predictions from different classifiers trained on data, while a coin flip does not involve any training or learning. Therefore, Alan's strategy is flawed and unlikely to provide useful predictions for the stock market."
     return answers
 
 
