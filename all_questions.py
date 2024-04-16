@@ -71,7 +71,7 @@ def question3():
     answers['Agree?'] = "No"
 
     # type: explain_string
-    answers['Explain'] = "ensemble methods allows multiple methods to improve the performance but each method need to be trained on relevant data(past) but here alna using random selection which doent supports that"
+    answers['Explain'] = "Ensemble methods allow us to improve performance by combining various techniques, but it's crucial for each technique to be trained on relevant historical data. Unfortunately, Alan's random selection method ignores this important requirement."
     return answers
 
 
@@ -134,14 +134,14 @@ def question6():
     answers['(b) C2 better classifier than C1?'] = "yes"
 
     # type: explain_string
-    answers['(b) C2 better classifier than C1? Explain'] = "Both classifiers perform as random guessing where TPR is equal to FPR. Increasing the probability of predicting the + class does not make C2 better, as it increases both TPR and FPR equally, maintaining performance equivalent to random chance."
+    answers['(b) C2 better classifier than C1? Explain'] = "Both classifiers show results similar to random chance, as the True Positive Rate (TPR) is the same as the False Positive Rate (FPR). Increasing the likelihood of predicting the positive class doesn't improve the effectiveness of C2, as it raises both TPR and FPR proportionally, leading to performance similar to random chance."
 
     # type: string
     # choices: ['TPR/FPR', 'precision/recall']
     answers['(c) Which metric?'] = "precision/recall"
 
     # type: explain_string
-    answers['(c) explain'] = "precision and recall take into account both the positive predictions and their impact on the overall performance in the context of both classes. Since C1 and C2 have equal TPR and FPR, they perform the same according to the random guess baseline in an ROC curve. Precision and recall do not consider true negatives and are thus less informative for comparing classifiers that output random predictions on imbalanced classes."
+    answers['(c) explain'] = "Precision and recall assess how well positive predictions impact overall performance in both categories. If C1 and C2 have the same True Positive Rates (TPR) and False Positive Rates (FPR), they show comparable performance compared to random guessing in an ROC curve. Nevertheless, precision and recall do not consider true negatives, making them less effective for evaluating classifiers that make random predictions for unevenly distributed classes."
 
     return answers
 
@@ -155,7 +155,7 @@ def question7():
     answers['(i) Best classifier?'] = "C2"
 
     # type: explain_string
-    answers['(i) Best classifier, explain'] = "C2 has a significantly higher TPR (50%) compared to C1 (10%), which means it is better at identifying positive cases. Both have the same precision, but C2 is more effective overall."
+    answers['(i) Best classifier, explain'] = "C2 has a much higher rate of accurately identifying positive cases at 50% compared to C1 at only 10%, showing that it is better at detecting positive cases. Even though both classifiers have the same level of precision, C2 is more effective overall."
 
 
     # type: string
@@ -163,7 +163,7 @@ def question7():
     answers['(ii) appropriate metric pair'] = "precision-recall-F1-Measure"
 
     # type: explain_string
-    answers['(ii) appropriate metric pair, explain'] = "The precision, recall, and F1-measure give a more complete picture of a classifier’s performance, especially in the context of imbalanced datasets. These metrics consider both the ability to identify positive cases correctly and the avoidance of misclassifying negative cases as positive."
+    answers['(ii) appropriate metric pair, explain'] = "Having a high-quality classifier is crucial for effectively dealing with imbalanced datasets. Metrics such as precision, recall, and the F1-measure provide a thorough assessment of how well a classifier performs. They help determine the classifier's ability to accurately identify positive cases and avoid incorrectly classifying negative cases as positive."
 
 
     # type: string
@@ -171,7 +171,7 @@ def question7():
     answers['(iii) preferred classifier?'] = "C3" 
 
     # type: explain_string
-    answers['(iii) best classifier, explain'] = "C3 achieves the best balance between precision and recall, indicated by the highest F1-measure (50%) among the classifiers. It suggests that C2 is more reliable for correctly identifying positive cases while maintaining a reasonable level of precision."
+    answers['(iii) best classifier, explain'] = "C3 strikes a balance between precision and recall, with its F1-measure reaching 50%, the highest among the classifiers. This shows that C3 is reliable in accurately identifying positive cases while also maintaining a good level of precision."
     return answers
 
 
@@ -243,10 +243,10 @@ def question10():
     answers['(c) Which evaluation measure to use between the two tests?'] = "TPR/FPR"
 
     # type: explain_string
-    answers['(c) Which evaluation measure? Explain'] = 'The F1 score is preferred in medical testing scenarios because it provides a balance between precision and recall, which is critical in ensuring that cases are correctly identified while minimizing false negatives, which could be life-threatening in the case of cancer detection.'
+    answers['(c) Which evaluation measure? Explain'] ="In medical testing, the F1 score is preferred because it effectively balances precision and recall, making it essential for accurately identifying cases and reducing the danger of missed diagnoses, particularly in critical situations such as cancer detection." 
 
     # type: explain_string
-    answers['(d) Example scenario where you would reverse choise in (c)'] = 'In a scenario where the cost of false positives is very high, such as when follow-up procedures are invasive, expensive, or carry significant risks, the TPR/FPR ratio might be preferred to minimize the risk of false alarms while maintaining an acceptable detection rate of true positives.'
+    answers['(d) Example scenario where you would reverse choise in (c)'] = "When the cost or impact of incorrect results is high, such as when further tests are risky or expensive, focusing on the ratio of true positives to false positives may be best. This method focuses on reducing false alarms while maintaining a satisfactory rate of correctly identified positives."
     return answers
 #-----------------------------------------------------------
 if __name__ == '__main__':
